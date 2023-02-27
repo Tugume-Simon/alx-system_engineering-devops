@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# displays contents in current directory where only the part
+# of the filename after the dash is displayed
+
+for file in $(/bin/ls "$PWD"); do
+	for (( i=0; i<${#file}; i++ )); do
+		char="${file:$i:1}"
+		if [ "$char" == "-" ]; then
+			echo "${file:(($i + 1)):${#file}}"
+		fi
+	done
+done
