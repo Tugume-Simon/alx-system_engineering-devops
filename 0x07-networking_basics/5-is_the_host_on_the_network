@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# pings an IP address provided as argument 5 times
+
+ping $1 -c 5
